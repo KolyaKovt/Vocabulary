@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F82FA658-18DE-4476-B3FB-DD1AE025BFE9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Vocabulary</RootNamespace>
+    <AssemblyName>Vocabulary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>VocabularyIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Confirm.Designer.cs">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoClassMethods.cs" />
+    <Compile Include="RenameVocabulary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameVocabulary.Designer.cs">
+      <DependentUpon>RenameVocabulary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeWords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeWords.Designer.cs">
+      <DependentUpon>ChangeWords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayFirstGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayFirstGame.Designer.cs">
+      <DependentUpon>PlayFirstGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaySecondGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlaySecondGame.Designer.cs">
+      <DependentUpon>PlaySecondGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoveWords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveWords.Designer.cs">
+      <DependentUpon>MoveWords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoClass.cs" />
+    <Compile Include="ChooseVocabulary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseVocabulary.Designer.cs">
+      <DependentUpon>ChooseVocabulary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddWords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWords.Designer.cs">
+      <DependentUpon>AddWords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVocabulary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVocabulary.Designer.cs">
+      <DependentUpon>AddVocabulary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenVocabulary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenVocabulary.Designer.cs">
+      <DependentUpon>OpenVocabulary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Confirm.resx">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseVocabulary.resx">
+      <DependentUpon>ChooseVocabulary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddWords.resx">
+      <DependentUpon>AddWords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameVocabulary.resx">
+      <DependentUpon>RenameVocabulary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeWords.resx">
+      <DependentUpon>ChangeWords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVocabulary.resx">
+      <DependentUpon>AddVocabulary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayFirstGame.resx">
+      <DependentUpon>PlayFirstGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaySecondGame.resx">
+      <DependentUpon>PlaySecondGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenVocabulary.resx">
+      <DependentUpon>OpenVocabulary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoveWords.resx">
+      <DependentUpon>MoveWords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VocabularyIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
