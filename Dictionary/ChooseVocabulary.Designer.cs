@@ -54,11 +54,11 @@
 			this.lbVocabulary.ItemHeight = 30;
 			this.lbVocabulary.Items.AddRange(new object[] {
             ""});
-			this.lbVocabulary.Location = new System.Drawing.Point(4, 53);
-			this.lbVocabulary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.lbVocabulary.Location = new System.Drawing.Point(1, 67);
+			this.lbVocabulary.Margin = new System.Windows.Forms.Padding(4);
 			this.lbVocabulary.Name = "lbVocabulary";
 			this.lbVocabulary.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-			this.lbVocabulary.Size = new System.Drawing.Size(1060, 484);
+			this.lbVocabulary.Size = new System.Drawing.Size(1065, 484);
 			this.lbVocabulary.TabIndex = 15;
 			this.lbVocabulary.TabStop = false;
 			this.lbVocabulary.SelectedIndexChanged += new System.EventHandler(this.lbDictionary_SelectedIndexChanged);
@@ -129,7 +129,7 @@
 			this.tbSearchWord.BackColor = System.Drawing.SystemColors.ControlLight;
 			this.tbSearchWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tbSearchWord.Location = new System.Drawing.Point(139, 13);
-			this.tbSearchWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.tbSearchWord.Margin = new System.Windows.Forms.Padding(4);
 			this.tbSearchWord.Name = "tbSearchWord";
 			this.tbSearchWord.Size = new System.Drawing.Size(223, 30);
 			this.tbSearchWord.TabIndex = 38;
@@ -137,7 +137,7 @@
 			// bSearchWord
 			// 
 			this.bSearchWord.Location = new System.Drawing.Point(371, 15);
-			this.bSearchWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.bSearchWord.Margin = new System.Windows.Forms.Padding(4);
 			this.bSearchWord.Name = "bSearchWord";
 			this.bSearchWord.Size = new System.Drawing.Size(100, 28);
 			this.bSearchWord.TabIndex = 37;
@@ -168,7 +168,7 @@
 			this.Controls.Add(this.bSearchWord);
 			this.Controls.Add(this.lbVocabulary);
 			this.KeyPreview = true;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ChooseVocabulary";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Vocabularies";
