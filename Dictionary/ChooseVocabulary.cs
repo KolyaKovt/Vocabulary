@@ -53,12 +53,11 @@ namespace Vocabulary
         private void StartAction()
         {
             lbVocabulary.SelectedItems.Clear();
-            tbSearchDictionary.Select();
-            tbSearchDictionary.Clear();
             tbSearchWord.Clear();
 
-            this.AcceptButton = bSearchDictionary;
+            this.AcceptButton = bSearchWord;
             this.Location = InfoClass.LocationOfForms;
+            tbSearchWord.Select();
 
             FillListBox();
             EnabalesOfButtons();
@@ -181,7 +180,7 @@ namespace Vocabulary
                 return true;
             }
 
-            else return false;
+            return false;
         }
 
         private void FillListsWithInfo()
@@ -222,34 +221,6 @@ namespace Vocabulary
         private void Form1_LocationChanged(object sender, EventArgs e)
         {
             InfoClass.LocationOfForms = this.Location;
-        }
-
-        private bool ShowingTheWordIfYouFoundIt(string nameOfCurrentDictionary, int i)
-        {
-            if (NamesOfFolders[i].ToLower() == nameOfCurrentDictionary)
-            {
-                lbVocabulary.SelectedIndex = i;
-                return true;
-            }
-            return false;
-        }
-
-        private void SearchingAndChoosingItems()
-        {
-            string nameOfCurrentDictionary = tbSearchDictionary.Text.ToLower().Trim();
-            lbVocabulary.SelectedIndices.Clear();
-
-            if (nameOfCurrentDictionary != "")
-            {
-                for (int i = 0; i < CountOfVocabularies; i++)
-                {
-                    if (ShowingTheWordIfYouFoundIt(nameOfCurrentDictionary, i)) return;
-                }
-
-                MessageBox.Show("You don't have such a vocabulary");
-            }
-
-            else MessageBox.Show("You need to fill the text box out");
         }
 
         private void FormForChoosingDictionary_FormClosed(object sender, FormClosedEventArgs e)
@@ -372,18 +343,6 @@ namespace Vocabulary
             RefillTextDocWithNumOfRepeatingsAndNames();
         }
 
-        private void bSearchDictionary_Click(object sender, EventArgs e)
-        {
-            SearchingAndChoosingItems();
-        }
-
-        //нажатие на форму, или любой из текстбоксов
-        private void tbSearchDictionary_Click(object sender, EventArgs e)
-        {
-            if (tbSearchDictionary.Focused) this.AcceptButton = bSearchDictionary;
-            else if (tbSearchWord.Focused) this.AcceptButton = bSearchWord;
-        }
-
         private void bSearchWord_Click(object sender, EventArgs e)
         {
             if (tbSearchWord.Text.Trim() != "") SearchWordAndIfYouFoundItShowMessegeWithLocation();
@@ -431,12 +390,6 @@ namespace Vocabulary
             }
 
             MessageBox.Show(result);
-        }
-
-        private void tbSearchDictionary_Enter(object sender, EventArgs e)
-        {
-            if (tbSearchDictionary.Focused) this.AcceptButton = bSearchWord;
-            else if (tbSearchWord.Focused) this.AcceptButton = bSearchDictionary;
         }
 
         private void tbSearchDictionary_TextChanged(object sender, EventArgs e)
