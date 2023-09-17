@@ -147,29 +147,23 @@ namespace Vocabulary
 
             phrase = phrase.Trim().ToLower();
 
-            if (!(FindFrase(leftWords, phrase) || FindFrase(leftWords, phrase)))
-            {
-                FindOneOfWords(leftWords, phrase);
-                FindOneOfWords(rightWords, phrase);
-            }
+            FindFrase(leftWords, phrase);
+            FindFrase(rightWords, phrase);
 
             if (indeciesOfFoundWords.Count > 0) return true;
 
             return false;
         }
 
-        private bool FindFrase(List<string> listToSearchIn, string phrase)
+        private void FindFrase(List<string> listToSearchIn, string phrase)
         {
             for (int i = 0; i < listToSearchIn.Count; i++)
             {
-                if (phrase == listToSearchIn[i].ToLower())
+                if (listToSearchIn[i].ToLower().Contains(phrase))
                 {
                     indeciesOfFoundWords.Add(i);
                 }
             }
-
-            if (indeciesOfFoundWords.Count > 0) return true;
-            return false;
         }
 
         private void bSearch_Click(object sender, EventArgs e)

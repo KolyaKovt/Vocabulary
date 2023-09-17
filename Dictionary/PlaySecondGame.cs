@@ -79,9 +79,9 @@ namespace Vocabulary
 
             if (sender is Button but)
             {
-                if (ProverkaNaPopadanie(but))
+                if (isCorrectAnswer(but))
                 {
-                    if (!ProverkaNaPobedu())
+                    if (!isGameOver())
                     {
                         FillButtonsAndLabel(rightWords, leftWords);
                         PutButtonsAndLabelOnTheRightDistance();
@@ -105,28 +105,22 @@ namespace Vocabulary
             }
         }
 
-        private bool ProverkaNaPopadanie(Button but)
+        private bool isCorrectAnswer(Button but)
         {
-            bool res = false;
-
             for (int i = 0; i < buttons.Count; i++)
             {
                 if (but == buttons[i] && i == rndIndexOfRightButton)
                 {
-                    foreach (Button button in buttons)
-                    {
-                        if (button.ForeColor == incorrectColor) return true;
-                    }
                     indexiesForRandom.Remove(rndIndexForRightAnswer);
                     countOfRightAnswers++;
                     return true;
                 }
             }
             
-            return res;
+            return false;
         }
 
-        private bool ProverkaNaPobedu()
+        private bool isGameOver()
         {
             if (countOfRightAnswers != leftWords.Count) return false;
             else
