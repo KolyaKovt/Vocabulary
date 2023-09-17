@@ -24,7 +24,6 @@ namespace Vocabulary
 
         private void StartAction()
         {
-            tbSearch.Select();
             this.Location = InfoClass.LocationOfForms;
             FillListsWithWords();
             FillListBoxes();
@@ -100,37 +99,6 @@ namespace Vocabulary
         {
             this.Hide();
             InfoClass.OpenVocabulary.Show();
-        }
-
-        private void bSearch_Click(object sender, EventArgs e)
-        {
-            SearchingAndChoosingItems();
-        }
-        private void SearchingAndChoosingItems()
-        {
-            string nameOfCurrentDictionary = tbSearch.Text.ToLower().Trim();
-            lbDictionary.SelectedIndices.Clear();
-
-            if (nameOfCurrentDictionary != "")
-            {
-                for (int i = 0; i < formWithDictioanaries.CountOfVocabularies; i++)
-                {
-                    if (ShowingTheWordIfYouFoundIt(nameOfCurrentDictionary, i)) return;
-                }
-
-                MessageBox.Show("You don't have such a vocabulary");
-            }
-
-            else MessageBox.Show("You need to fill the text box in");
-        }
-        private bool ShowingTheWordIfYouFoundIt(string nameOfCurrentDictionary, int i)
-        {
-            if (namesOfFolders[i].ToLower() == nameOfCurrentDictionary)
-            {
-                lbDictionary.SelectedIndex = i;
-                return true;
-            }
-            return false;
         }
 
         private void FormWhereToMoveWords_MouseDown(object sender, MouseEventArgs e)
