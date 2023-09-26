@@ -59,7 +59,7 @@ namespace Vocabulary
 
         private void howMutchWords()
         {
-            label1.Text = $"Connect the words. Left {leftWords.Count - countOfRightAnswers} words";
+            label1.Text = $"{leftWords.Count - countOfRightAnswers} words left";
         }
 
         private void FillListsWithWords()
@@ -208,7 +208,7 @@ namespace Vocabulary
         {
             if (countOfRightAnswers == leftWords.Count)
             {
-                label1.Text = "Congratulations, you guessed all the words!";
+                label1.Text = "You won - you overcame laziness!";
                 bRestart.Enabled = true;
                 formWithDictioanaries.PlusOneRepeatingAndRefillingFile();
                 this.Text = $"{namesOfFolders[InfoClass.IndexOfSelectedVocabulary]}" +

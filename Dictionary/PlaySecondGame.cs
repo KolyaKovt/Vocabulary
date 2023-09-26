@@ -51,7 +51,7 @@ namespace Vocabulary
 
         private void HowMutchWords()
         {
-            label1.Text = $"Choose the right translation. Left {leftWords.Count - countOfRightAnswers} words";
+            label1.Text = $"{leftWords.Count - countOfRightAnswers} words left";
         }
 
         private void CreatingButtons()
@@ -125,7 +125,7 @@ namespace Vocabulary
             if (countOfRightAnswers != leftWords.Count) return false;
             else
             {
-                label1.Text = "You won!";
+                label1.Text = "You won - you overcame laziness!";
                 SetRightLocationForUpperLabel();
                 HideButtonsAndLabel();
                 formWithDictioanaries.PlusOneRepeatingAndRefillingFile();
@@ -180,7 +180,7 @@ namespace Vocabulary
 
             label1.Select();
 
-            label1.Text = $"Choose the right translation. Left {leftWords.Count} words";
+            label1.Text = $"{leftWords.Count} words left";
             SetRightLocationForUpperLabel();
 
             ClearButtons();
