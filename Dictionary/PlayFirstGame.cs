@@ -60,6 +60,14 @@ namespace Vocabulary
         private void howMutchWords()
         {
             label1.Text = $"{leftWords.Count - countOfRightAnswers} words left";
+            SetRightLocationForUpperLabel();
+        }
+
+        private void SetRightLocationForUpperLabel()
+        {
+            int centerOfThePnlFromScreenStart = pnlButtons.Width / 2 + pnlButtons.Location.X;
+            int XlocationForLabel = centerOfThePnlFromScreenStart - (label1.Width / 2);
+            label1.Location = new Point(XlocationForLabel, label1.Location.Y);
         }
 
         private void FillListsWithWords()
@@ -209,6 +217,7 @@ namespace Vocabulary
             if (countOfRightAnswers == leftWords.Count)
             {
                 label1.Text = "You won - you overcame laziness!";
+                SetRightLocationForUpperLabel();
                 bRestart.Enabled = true;
                 formWithDictioanaries.PlusOneRepeatingAndRefillingFile();
                 this.Text = $"{namesOfFolders[InfoClass.IndexOfSelectedVocabulary]}" +
@@ -243,7 +252,7 @@ namespace Vocabulary
                 countOfFilledRussianWords++;
             }
         }
-        //создаём текст для английских лейблов
+        
         private void CreatingTextForEnglishLabel()
         {
             for (int i = 0; i < countOfItterationsForFillingIn; i++)
@@ -407,6 +416,7 @@ namespace Vocabulary
 
             FillListsWithWords();
             FillRussianAndEnglishButtons();
+            SetRightLocationForUpperLabel();
             howMutchWords();
         }
 
